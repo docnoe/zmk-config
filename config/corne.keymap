@@ -25,6 +25,21 @@
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <0 24>;
         };
+
+        comb_paren {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <15 6>;
+        };
+
+        comb_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <15 18>;
+        };
+
+        comb_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <15 30>;
+        };
     };
 
     behaviors {
