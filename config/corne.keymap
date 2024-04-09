@@ -71,10 +71,10 @@
             //                    | SHIFT | ALT bspc | GUI DELETE |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q            &kp W        &kp E      &kp R                   &kp T                  &kp Y  &kp U        &kp I        &kp O         &kp P               &kp C_AC_SCROLL_UP
-&kp ESC    &mt LS(LCTRL) A  &mt LCTRL S  &lt 2 D    &lt 3 F                 &kp G                  &kp H  &kp J        &kp K        &mt RCTRL L   &mt RS(RCTRL) SEMI  &kp SQT
-&kp LSHFT  &mt LS(LGUI) Z   &mt LGUI X   &lt 4 C    &kp V                   &kp B                  &kp N  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &kp C_AC_SCROLL_DOWN
-                                         &td_shift  &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI DELETE    &sl 3  &lt 1 SPACE  &lt 4 ENTER
+&kp TAB  &kp Q            &kp W        &kp E      &kp R                   &kp T                  &kp Y  &kp U        &kp I        &kp O         &kp P               &soft_off
+&kp ESC  &mt LS(LCTRL) A  &mt LCTRL S  &lt 2 D    &lt 3 F                 &kp G                  &kp H  &kp J        &kp K        &mt RCTRL L   &mt RS(RCTRL) SEMI  &kp SQT
+&none    &mt LS(LGUI) Z   &mt LGUI X   &lt 4 C    &kp V                   &kp B                  &kp N  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &none
+                                       &td_shift  &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI DELETE    &sl 3  &lt 1 SPACE  &lt 4 ENTER
             >;
         };
 
