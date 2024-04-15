@@ -64,27 +64,15 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q     |     W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | scrollUp |
-            // | ESC  |  SC A  |  SC S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  SG Z  |  SC X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | scrolldown  |
-            //                    | SHIFT | ALT bspc | GUI DELETE |   | ENT | RSE  | ALT |
-
             bindings = <
 &kp TAB  &kp Q            &kp W        &kp E      &kp R                   &kp T                  &kp Y  &kp U        &kp I        &kp O         &kp P               &soft_off
 &kp ESC  &mt LS(LCTRL) A  &mt LCTRL S  &lt 2 D    &lt 3 F                 &kp G                  &kp H  &kp J        &kp K        &mt RCTRL L   &mt RS(RCTRL) SEMI  &kp SQT
-&none    &mt LS(LGUI) Z   &mt LGUI X   &lt 4 C    &kp V                   &kp B                  &kp N  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &none
+&tog 5   &mt LS(LGUI) Z   &mt LGUI X   &lt 4 C    &kp V                   &kp B                  &kp N  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &none
                                        &td_shift  &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI DELETE    &sl 3  &lt 1 SPACE  &lt 4 ENTER
             >;
         };
 
         layer_1 {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
             bindings = <
 &trans  &kp N1    &kp N2  &kp N3    &kp N4             &kp N5            &kp N6     &kp N7    &kp N8           &kp N9  &kp N0  &trans
 &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR           &kp PRCNT         &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &trans  &trans  &trans
@@ -126,12 +114,12 @@
             >;
         };
 
-        layer_5 {
+        colemaky {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&kp TAB  &kp Q            &kp W        &kp F      &kp P                   &kp B                  &kp Y  &kp U        &kp E        &kp I         &kp O               &none
+&kp ESC  &mt LS(LCTRL) A  &mt LCTRL R  &lt 2 S    &lt 3 T                 &kp G                  &kp H  &kp J        &kp K        &mt RCTRL L   &mt RS(RCTRL) SEMI  &kp SQT
+&tog 5   &mt LS(LGUI) Z   &mt LGUI X   &lt 4 C    &kp D                   &kp V                  &kp N  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &none
+                                       &td_shift  &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI DELETE    &sl 3  &lt 1 SPACE  &lt 4 ENTER
             >;
         };
     };
