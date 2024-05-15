@@ -74,9 +74,9 @@
 
         colemaky {
             bindings = <
-&kp TAB  &kp Q            &kp W        &kp F      &kp P                   &kp B                  &kp U  &kp Y        &kp E        &kp I         &kp O               &none
+&kp TAB  &kp Q            &kp W        &kp F      &kp P                   &kp B                  &kp U  &kp N        &kp E        &kp I         &kp O               &none
 &kp ESC  &mt LS(LCTRL) A  &mt LCTRL R  &lt 3 S    &lt 4 T                 &kp D                  &kp H  &kp J        &kp K        &mt RCTRL L   &mt RS(RCTRL) SEMI  &kp SQT
-&tog 1   &mt LS(LGUI) Z   &mt LGUI X   &lt 5 C    &kp V                   &kp B                  &kp N  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &none
+&tog 1   &mt LS(LGUI) Z   &mt LGUI X   &lt 5 C    &kp V                   &kp B                  &kp Y  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &none
                                        &td_shift  &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI DELETE    &sl 4  &lt 2 SPACE  &lt 5 ENTER
             >;
         };
