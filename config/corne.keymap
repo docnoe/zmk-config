@@ -58,6 +58,13 @@
             bindings = <&kp LPAR &kp RPAR &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp LBRC &kp ENTER>;
             label = "FUNCTION";
         };
+
+        sticky_shift: sticky_key {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_SHIFT>;
+            label = "STICKY_KEY";
+        };
     };
 
     keymap {
