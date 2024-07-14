@@ -15,7 +15,10 @@
 
 &lt { quick-tap-ms = <200>; };
 
-&sk { quick-release; };
+&sk { 
+  quick-release; 
+  release-after-ms = <300>;
+};
 
 / {
     combos {
