@@ -15,9 +15,9 @@
 
 &lt { quick-tap-ms = <200>; };
 
-&sk { 
-  quick-release; 
-  release-after-ms = <300>;
+&sk {
+    quick-release;
+    release-after-ms = <300>;
 };
 
 / {
@@ -68,6 +68,14 @@
             bindings = <&sk LEFT_SHIFT>;
             label = "STICKY_KEY";
         };
+
+        repeat: repeat {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &repeat>;
+            label = "REPEAT";
+            wait-ms = <5000>;
+        };
     };
 
     keymap {
@@ -77,7 +85,7 @@
             bindings = <
 &kp TAB  &kp Q            &kp W        &kp E      &kp R                   &kp T                  &kp Y  &kp U        &kp I        &kp O         &kp P               &kp LS(LA(LC(T)))
 &kp ESC  &mt LS(LCTRL) A  &mt LCTRL S  &lt 3 D    &lt 4 F                 &kp G                  &kp H  &kp J        &lt 3 K      &mt RCTRL L   &mt RS(RCTRL) SEMI  &kp SQT
-&tog 1   &mt LS(LGUI) Z   &mt LGUI X   &lt 5 C    &kp V                   &kp B                  &kp N  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &none
+&tog 1   &mt LS(LGUI) Z   &mt LGUI X   &lt 5 C    &kp V                   &kp B                  &kp N  &kp M        &kp COMMA    &mt RGUI DOT  &mt RS(RGUI) FSLH   &repeat
                                        &td_shift  &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI DELETE    &sl 4  &lt 2 SPACE  &lt 5 ENTER
             >;
         };
