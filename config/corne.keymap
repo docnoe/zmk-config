@@ -62,13 +62,6 @@
             label = "FUNCTION";
         };
 
-        sticky_shift: sticky_key {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&sk LEFT_SHIFT>;
-            label = "STICKY_KEY";
-        };
-
         repeat: repeat {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
