@@ -1,2 +1,4 @@
 boards/.DS_Store
 .DS_Store
+.west-workspace/
+build/

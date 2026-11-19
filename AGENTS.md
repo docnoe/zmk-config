@@ -27,19 +27,20 @@ This repository is a customized ZMK Firmware user configuration module for a 42-
 ## Development Commands
 
 ### Containerized Build (Recommended)
-Use the official ZMK ARM build container without needing a local Zephyr SDK installation:
+`build.sh` mirrors the GitHub Actions workflow inside the official ZMK ARM build container. Only Docker is required; no local Zephyr SDK installation:
 ```bash
-# Build both left and right halves in Docker
-docker run --rm -it -v "$(pwd)":/workspaces/zmk-config -w /workspaces/zmk-config \
-  docker.io/zmkfirmware/zmk-build-arm:stable \
-  /bin/bash -c "
-    west init -l config
-    west update
-    west build -s /zmk/app -d build/left -b nice_nano_v2 -- -DSHIELD=corne_left -DZMK_CONFIG=/workspaces/zmk-config/config
-    west build -s /zmk/app -d build/right -b nice_nano_v2 -- -DSHIELD=corne_right -DZMK_CONFIG=/workspaces/zmk-config/config
-  "
+./build.sh           # both halves
+./build.sh left      # only left half
+./build.sh right     # only right half
+./build.sh init      # only initialize/update the West workspace
+./build.sh shell     # interactive shell inside the container
+./build.sh clean     # remove cached workspace and build outputs
 ```
-Binaries will be placed in `build/left/zephyr/zmk.uf2` and `build/right/zephyr/zmk.uf2`.
+The downloaded West workspace is cached in `.west-workspace/` and the repository itself stays clean. Ready-to-flash files are written to `build/corne_left-nice_nano_v2-zmk.uf2` and `build/corne_right-nice_nano_v2-zmk.uf2`.
+
+Optional environment variables: `ZMK_IMAGE` (default `zmkfirmware/zmk-build-arm:stable`), `ZMK_WORKSPACE`, `ZMK_OUTPUT` and `BOARD`.
+
+The script copies `config/` into the workspace, runs `west init -l /workspace/config`, `west update` and `west zephyr-export`, then builds with `-DZMK_CONFIG=/workspace/config` and `-DZMK_EXTRA_MODULES=/zmk-config` because this repository is also a Zephyr module.
 
 ### Local Native West Build
 If a local Zephyr development environment is configured:
@@ -66,12 +67,12 @@ west build -s zmk/app -d build/right -b nice_nano_v2 -- -DSHIELD=corne_right -DZ
 4. Copy the matching `.uf2` file:
 ```bash
 # macOS
-cp build/left/zephyr/zmk.uf2 /Volumes/NICENANO/
+cp build/corne_left-nice_nano_v2-zmk.uf2 /Volumes/NICENANO/
 
 # Linux
-cp build/left/zephyr/zmk.uf2 /media/$USER/NICENANO/
+cp build/corne_left-nice_nano_v2-zmk.uf2 /media/$USER/NICENANO/
 ```
-The controller will reboot automatically once flashing completes. Repeat for the right half with the right binary.
+The controller will reboot automatically once flashing completes. Repeat for the right half with `build/corne_right-nice_nano_v2-zmk.uf2`.
 
 ## Code Conventions & Common Patterns
 
